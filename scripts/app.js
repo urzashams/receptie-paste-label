@@ -1,8 +1,8 @@
 import {
   connectPrinterFromButton,
+  loadAuthorizedPrinter,
   printLabel,
-  reconnectAuthorizedPrinter,
-} from "./printer.js";
+} from "./printer.js?v=connection-fix-1";
 
 const button = document.getElementById("paste-button");
 const status = document.getElementById("status");
@@ -11,7 +11,7 @@ const setStatus = (message) => {
 };
 
 button.disabled = true;
-await reconnectAuthorizedPrinter(setStatus);
+await loadAuthorizedPrinter();
 button.disabled = false;
 
 button.addEventListener("click", async () => {
