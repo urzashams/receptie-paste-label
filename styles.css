@@ -1,0 +1,76 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4f6fa;
+  color: #172033;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100svh;
+  padding: max(1.25rem, env(safe-area-inset-top)) 1.25rem max(1.25rem, env(safe-area-inset-bottom));
+  display: grid;
+  place-items: center;
+}
+
+main {
+  width: min(100%, 32rem);
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+
+#paste-button {
+  width: 100%;
+  min-height: min(56svh, 28rem);
+  border: 0;
+  border-radius: 1.5rem;
+  background: #1769e0;
+  color: #fff;
+  box-shadow: 0 1rem 2.5rem rgb(23 105 224 / 22%);
+  font: inherit;
+  font-size: clamp(2.5rem, 13vw, 5rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  touch-action: manipulation;
+  cursor: pointer;
+  transition: background-color 120ms ease, transform 120ms ease;
+}
+
+#paste-button:active:not(:disabled) {
+  background: #0f56c0;
+  transform: scale(0.985);
+}
+
+#paste-button:focus-visible {
+  outline: 4px solid #172033;
+  outline-offset: 5px;
+}
+
+#paste-button:disabled {
+  cursor: wait;
+  opacity: 0.78;
+}
+
+#status {
+  min-height: 1.5em;
+  margin: 0;
+  color: #526078;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: center;
+}
