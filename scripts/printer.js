@@ -74,6 +74,9 @@ export async function reconnectAuthorizedPrinter(setStatus) {
     if (!authorizedPrinter) return false;
     return await connectToDevice(authorizedPrinter, setStatus);
   } catch {
+    if (authorizedPrinter) {
+      setStatus("Imprimanta nu este pregătită. Apasă PASTE pentru reconectare.");
+    }
     return false;
   }
 }
